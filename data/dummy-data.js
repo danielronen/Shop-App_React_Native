@@ -8,12 +8,12 @@ export const COUPONS = [
   {id:"3", coupon:"Daniel&Shawn", discount: 0.50}
 ]
 export const CATEGORIES = [
-  new Category("c1", "T-Shirts", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/T%20Shirts/logo.png?raw=true", 6),
-  new Category("c2", "Pants", "https://www.pngall.com/wp-content/uploads/5/Pant-PNG-Images.png", 6),
-  new Category("c3", "Hoodies", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/Hoodies/logo.png?raw=true", 6),
-  new Category("c4", "Coats", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/Coats/logo.png?raw=true", 6),
-  new Category("c5", "Shoes", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/Shoes/adidas-originals-skate-shoe-sneakers-adidas-adidas-shoes-e31bac73d9379cba33a6bf13749e96ac.png?raw=true", 6),
-  new Category("c6", "Accessories", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/Accessories/logo.png?raw=true", 6),
+  new Category("c1", "T-Shirts", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/T%20Shirts/logo.png?raw=true"),
+  new Category("c2", "Pants", "https://www.pngall.com/wp-content/uploads/5/Pant-PNG-Images.png"),
+  new Category("c3", "Hoodies", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/Hoodies/logo.png?raw=true"),
+  new Category("c4", "Coats", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/Coats/logo.png?raw=true"),
+  new Category("c5", "Shoes", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/Shoes/adidas-originals-skate-shoe-sneakers-adidas-adidas-shoes-e31bac73d9379cba33a6bf13749e96ac.png?raw=true"),
+  new Category("c6", "Accessories", "https://github.com/danielronen/React-Native-/blob/main/Product%20images/Accessories/logo.png?raw=true"),
 ];
 
 /////////////////////////////////////////////// T SHIRTS //////////////////////////////////////////////////////////

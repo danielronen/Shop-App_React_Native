@@ -13,10 +13,12 @@ import HomeScreen from '../screens/HomeScreen';
 import PaymentScreen from '../screens/PaymentScreen';
 import ProductScreen from '../screens/ProductScreen';
 import SuccessScreen from '../screens/SuccessScreen';
+import {CART} from '../data/dummy-data';
 
 const Stack = createNativeStackNavigator();
 
 export default function ShopNavigator(props) {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -33,7 +35,7 @@ export default function ShopNavigator(props) {
           headerRight: () => (
             <Icon
               onPress={() => 
-                navigation.navigate("Shopping Cart")
+                navigation.navigate("Shopping Cart",{numOfProd: CART.length})
               }
               name="cart"
               style={{color: "white", fontSize: 20, marginRight:"5%"}}
@@ -53,7 +55,11 @@ export default function ShopNavigator(props) {
           component={ProductScreen}
           options={({ route }) => ({ title: route.params.productName })}
         />
-        <Stack.Screen name="Shopping Cart" component={CartScreen} />
+        <Stack.Screen 
+          name="Shopping Cart" 
+          component={CartScreen}
+          options={({route}) => ({ title: 'Shopping Cart: ' + route.params.numOfProd  })}
+          />
         <Stack.Screen name="Payment" component={PaymentScreen} />
         <Stack.Screen name="Success" component={SuccessScreen} />
       </Stack.Navigator>

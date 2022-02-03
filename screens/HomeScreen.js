@@ -1,10 +1,11 @@
 import React from "react";
 import { FlatList, View } from "react-native";
-import { CATEGORIES } from "../data/dummy-data";
+import { CATEGORIES, PRODUCTS } from "../data/dummy-data";
 
 // 1. Import:
 import CategoriesGrid from "../components/CategoriesGrid";
 import styles from "../assets/styles";
+
 
 const HomeScreen = ({ navigation }) => {
     const renderGridItem = ({ item }) => {
@@ -13,10 +14,12 @@ const HomeScreen = ({ navigation }) => {
                 title={item.title}
                 bgImage={item.imageUrl}
                 onSelect={() => {
+                    let arr = PRODUCTS.filter(product => product.categoryIds[0] == item.id);
+                    let numOfProd = arr.length;
                     navigation.navigate("Category", {
                         categoryId: item.id,
                         categoryName: item.title,
-                        categoryAmount: item.amount,
+                        categoryAmount: numOfProd,
                     });
                 }}
             />

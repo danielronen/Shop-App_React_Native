@@ -33,7 +33,7 @@ export default function ProductScreen({ navigation, route }) {
           <TouchableOpacity 
           onPress={() =>{
             CART.push(selectedProduct)
-            navigation.navigate("Shopping Cart")
+            
           }}
           style={[styles.checkButton, { width: 90, height: 30, backgroundColor: "#7300e6" }]}>
             <Text style={styles.checkButtonText}>Buy Now</Text>

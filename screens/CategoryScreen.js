@@ -8,7 +8,7 @@ import ItemsGrid from '../components/ProductsGrid';
 export default function CategoryScreen({ route, navigation }) {
   const { categoryId } = route.params;
   // array of all products - belong to that category
-  const products2 = PRODUCTS.filter(product => product.categoryIds.indexOf(categoryId) >= 0);
+
   const products = PRODUCTS.filter(product => product.categoryIds[0] == categoryId);
   // 2. Call ItemsGrid
   const renderItem = ({ item }) => {
