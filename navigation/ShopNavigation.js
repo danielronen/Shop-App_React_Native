@@ -3,7 +3,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 // createNativeStackNavigator - create stack navigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Platform, Button } from 'react-native';
+import {  } from 'react-native';
 import { Ionicons as Icon } from "react-native-vector-icons";
 
 // import screens:
@@ -25,13 +25,9 @@ export default function ShopNavigator(props) {
         initialRouteName="HomeScreen"
         screenOptions = {({navigation}) => ({
           headerStyle: {
-            backgroundColor: (Platform.OS = "ios"
-              ? "#141452"
-              : '#fff2cc'),
+            backgroundColor:"#004369",
           },
-          headerTintColor: (Platform.OS = "ios"
-            ? '#fff2cc'
-            : "#141452"),
+          headerTintColor: '#E5DDC8',
           headerRight: () => (
             <Icon
               onPress={() => 

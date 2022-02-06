@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, FlatList, View } from 'react-native';
+import {FlatList, View } from 'react-native';
 import styles from '../assets/styles'
 import { PRODUCTS } from '../data/dummy-data';
 // 1. import:

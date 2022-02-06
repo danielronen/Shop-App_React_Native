@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Text, View, Button, TextInput, SafeAreaView, ScrollView, Form, TouchableOpacity } from "react-native";
+import { Text, View, TextInput, ScrollView, TouchableOpacity } from "react-native";
 import styles from '../assets/styles';
 
 export default function App({ navigation, route }) {

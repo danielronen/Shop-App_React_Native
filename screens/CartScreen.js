@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, FlatList, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-import { PRODUCTS, CART, COUPONS } from "../data/dummy-data";
-import ItemsGrid from '../components/ProductsGrid';
+import { Text, View, FlatList, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { CART, COUPONS } from "../data/dummy-data";
 import styles from '../assets/styles';
 
 
@@ -41,10 +40,7 @@ export default function CartScreen({ route, navigation }) {
   const renderItem = ({ item }) => {
     return (
       <View style={styles.gridItem}>
-
         <ImageBackground source={{ uri: item.imageUrl }} style={styles.BGImg}>
-          <View style={styles.gridContainer} >
-          </View>
         </ImageBackground>
         <Text style={[styles.titles, { fontSize: 15 }]}>{item.title}</Text>
         <Text style={[styles.titles, { fontSize: 17 }]}>{item.price}$</Text>
@@ -91,7 +87,7 @@ export default function CartScreen({ route, navigation }) {
         <Text style={styles.titles}>Price after discount: {finalPrice}$</Text>
         <View style={{ alignItems: 'center', textAlign: "center" }}>
           <TouchableOpacity
-            style={[styles.checkButton, { width: 140, height: 35, }]}
+            style={styles.payButton}
             onPress={() => {
               navigation.navigate("Payment")
             }}>
@@ -103,19 +99,3 @@ export default function CartScreen({ route, navigation }) {
   );
 
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     width: '100%',
-//     height:'100%',
-//   },
-//   BGImg: {
-//     width: '100%',
-//     height: '100%',
-
-//   }
-// });

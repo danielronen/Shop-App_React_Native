@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { } from 'react-native';
 import ShopNavigator from './navigation/ShopNavigation';
 
-export default function App() {
+import AppLoading from "expo-app-loading";
+import {useFonts, Kanit_200ExtraLight, Kanit_300Light, Kanit_400Regular, Kanit_500Medium, Kanit_600SemiBold, Kanit_700Bold,} from "@expo-google-fonts/kanit";
 
-    return (
-      <ShopNavigator />
-    );
+export default function App() {
+  let [fontsLoaded, err] = useFonts({
+    Kanit_200ExtraLight,
+    Kanit_300Light,
+    Kanit_400Regular,
+    Kanit_500Medium,
+    Kanit_600SemiBold,
+    Kanit_700Bold,
+  });
+
+  if (!fontsLoaded) return <AppLoading />;
+  else return <ShopNavigator />;
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

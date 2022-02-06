@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import styles from '../assets/styles'
 import { AntDesign as Icon } from "react-native-vector-icons";
 
@@ -17,13 +17,3 @@ export default function SuccessScreen({ navigation, route }) {
     </View>
   )
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     // justifyContent: 'center',
-//     marginTop: '20%'
-//   },
-// });
