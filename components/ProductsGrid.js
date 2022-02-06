@@ -12,8 +12,10 @@ const ItemsGrid = (props, { navigation }) => {
   const onPressHandler = () => {
     SetSubmitted(!submitted);
     SetshowWarning(true);
-
-  }
+    setTimeout(() => {
+      SetshowWarning(false);
+    }, 1200);
+  };
 
   return (
     <TouchableOpacity style={styles.gridItemProduct} onPress={props.onSelectProduct}>
@@ -21,33 +23,35 @@ const ItemsGrid = (props, { navigation }) => {
         <Modal
           visible={showWarning}
           transparent
-          onRequestClose={() =>
-            SetshowWarning(false)
-          }
-          animationType='slide'
+          animationType='fade'
           hardwareAccelerated
         >
           <View style={styles.centered_view}>
             <View style={styles.warning_modal}>
-              <TouchableOpacity
-                onPress={() => SetshowWarning(false)}
-              >
-
-                <View style={styles.warning_title}>
-                  <Text style={styles.text}>Added!</Text>
-                </View>
-
-              </TouchableOpacity>
+              <Text style={styles.text}>Added!</Text>
             </View>
           </View>
         </Modal>
         <View style={styles.productRow}>
+          
           <ImageBackground source={{ uri: props.bgImage }} style={styles.bgImage}>
             <View style={styles.titleContainer}>
             </View>
           </ImageBackground>
         </View>
         <View style={styles.productDetail}>
+        <Modal
+            visible={showWarning}
+            transparent
+            animationType='fade'
+            hardwareAccelerated
+          >
+            <View style={styles.centered_view}>
+              <View style={styles.warning_modal}>
+                <Text style={styles.text}>Added!</Text>
+              </View>
+            </View>
+          </Modal>
           <Text style={{ color: '#fff2cc', fontWeight: 'bold' }}>{props.title}</Text>
           <Text style={{ color: '#fff2cc' }}>{props.price} $</Text>
           <TouchableOpacity

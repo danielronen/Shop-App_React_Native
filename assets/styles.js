@@ -293,35 +293,14 @@ export default StyleSheet.create({
         backgroundColor: '#00000000'
     },
     warning_modal: {
-        width: 120,
-        height: 50,
-        backgroundColor: '#2B7C85',
-        borderWidth: 1,
-        borderColor: '#000',
-        borderRadius: 20,
-    },
-    warning_title: {
+        width: 100,
         height: 30,
+        backgroundColor: '#004369aa',
+        borderWidth: 1,
+        borderColor: '#E5DDC8',
+        borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#00000029',
-        borderTopRightRadius: 20,
-        borderTopLeftRadius: 20,
-    },
-    warning_body: {
-        height: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#00000000',
-    },
-    warning_button: {
-        backgroundColor: '#00000019',
-        width: "100%",
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
-        borderEndWidth: 1,
-        borderColor: "black",
-
     },
     text: {
         justifyContent: 'center',
