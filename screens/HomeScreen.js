@@ -2,7 +2,6 @@ import React from "react";
 import { FlatList, View } from "react-native";
 import { CATEGORIES, PRODUCTS } from "../data/dummy-data";
 
-// 1. Import:
 import CategoriesGrid from "../components/CategoriesGrid";
 import styles from "../assets/styles";
 

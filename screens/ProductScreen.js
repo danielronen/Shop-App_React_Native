@@ -4,8 +4,9 @@ import styles from '../assets/styles'
 import { PRODUCTS, CART } from "../data/dummy-data"
 import { Entypo as Icon } from "react-native-vector-icons";
 
+
 export default function ProductScreen({ navigation, route }) {
-  // store productId from CountryTripScreen:
+  
   const { productId } = route.params;
   // find all data for productId:
   const selectedProduct = PRODUCTS.find((product) => product.id === productId);

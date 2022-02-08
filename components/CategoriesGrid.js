@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ImageBackground, Image } from 'react-native';
+import { Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import styles from '../assets/styles';
 
 const CategoriesGrid = (props) => {

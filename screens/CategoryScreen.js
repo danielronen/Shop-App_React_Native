@@ -2,7 +2,6 @@ import React from 'react';
 import {FlatList, View } from 'react-native';
 import styles from '../assets/styles'
 import { PRODUCTS } from '../data/dummy-data';
-// 1. import:
 import ItemsGrid from '../components/ProductsGrid';
 
 export default function CategoryScreen({ route, navigation }) {
@@ -10,7 +9,7 @@ export default function CategoryScreen({ route, navigation }) {
   // array of all products - belong to that category
 
   const products = PRODUCTS.filter(product => product.categoryIds[0] == categoryId);
-  // 2. Call ItemsGrid
+  // Call ItemsGrid
   const renderItem = ({ item }) => {
     return (
       <ItemsGrid

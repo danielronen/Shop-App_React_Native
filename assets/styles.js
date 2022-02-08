@@ -1,7 +1,5 @@
 import { StyleSheet } from "react-native";
 
-const inputViewSize = 350;
-const inputLabelSize = inputViewSize / 2;
 const font = "Kanit_400Regular";
 
 export default StyleSheet.create({
@@ -16,12 +14,6 @@ export default StyleSheet.create({
         justifyContent: "center",
     },
 
-    // fontFam:{
-    //   fontFamily: ''
-    // }
-
-
-    //GridComponent
     gridItem: {
         flex: 1,
         margin: 15,
@@ -34,49 +26,38 @@ export default StyleSheet.create({
         shadowColor: "grey",
         shadowOpacity: 0.7,
         shadowOffset: { width: 2, height: 4 },
-        shadowRadius: 10,
-        elevation: 3, // for android - to see the shadow
-
+        shadowRadius: 10, 
     },
     titles: {
         fontSize: 25,
-        // color: "#48C9B0",
         color: '#E5DDC8',
         textAlign: "center",
         textShadowColor: "#330080",
         textShadowRadius: 3,
-        // fontFamily: "oswald,reggae-One",
         fontFamily: font,
-        // fontWeight: "bold",
     },
 
-
-    //BG img
     BGImg: {
         height: 150,
     },
 
-
-
     input: {
         height: 30,
         color: "black",
-        width: inputLabelSize,
+        width: 175,
         borderColor: "white",
         borderWidth: 2,
         borderRadius: 8,
         paddingLeft: 5,
         paddingRight: 5,
-        //  marginLeft: inputViewSize * 0.25,
     },
     inputView: {
         marginTop: 5,
-        width: inputViewSize,
+        width: 350,
         justifyContent: "center",
         padding: 3,
     },
     textInput: {
-        // fontFamily: "oswald,reggae-One",
         fontFamily: font,
         color: '#E5DDC8',
         fontSize: 18,
@@ -92,7 +73,6 @@ export default StyleSheet.create({
     couponButton: {
         margin: 20,
         borderRadius: 4,
-        //width: ,
         backgroundColor: "yellow",
         alignItems: 'center',
         justifyContent: 'center',
@@ -103,25 +83,17 @@ export default StyleSheet.create({
     },
     errorMsg: {
         color: "#ff0000",
-        // marginLeft: inputViewSize * 0.25,
-        // marginRight: inputViewSize * 0.25,
         textAlign: "center",
     },
     checkButtonText: {
         fontSize: 17,
         color: '#E5DDC8',
-        //textAlign: "center",
         textShadowColor: "black",
         textShadowOffset: { width: 1, height: 1 },
         textShadowRadius: 3,
         fontFamily: font,
-        elevation: 3, // for android - to see the shadow
-        alignItems: "center",
-        //   marginTop: 4,
         alignItems: "center",
         justifyContent: "center",
-
-
     },
     checkButton: {
         backgroundColor: "#DB1F48",
@@ -132,7 +104,6 @@ export default StyleSheet.create({
         shadowOpacity: 0.7,
         shadowOffset: { width: 2, height: 4 },
         shadowRadius: 7,
-        elevation: 3, // for android - to see the shadow
         alignItems: "center",
         width: 80,
         height: 30,
@@ -148,16 +119,12 @@ export default StyleSheet.create({
         shadowOpacity: 0.7,
         shadowOffset: { width: 2, height: 4 },
         shadowRadius: 7,
-        elevation: 3, // for android - to see the shadow
         alignItems: "center",
         width: 140,
         height: 35,
         marginTop: 10,
         justifyContent: "center",
     },
-
-    ///////////////////////////////
-
     scrollViewWrapper: {
         flex: 1,
         width: "100%",
@@ -227,7 +194,6 @@ export default StyleSheet.create({
     },
     item: {
         height: 200,
-        // width: "100%",
         backgroundColor: "#ccc",
         borderRadius: 10,
         overflow: "hidden",
@@ -245,13 +211,10 @@ export default StyleSheet.create({
         alignItems: "center",
         height: "20%",
     },
-    // ADD: must set wdth and height -> it is from the web.
     bgImage: {
         width: "100%",
         height: "100%",
         justifyContent: "center",
-
-
     },
     titleContainer: {
         height: 150,
@@ -264,7 +227,6 @@ export default StyleSheet.create({
         shadowOpacity: 0.9,
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 10,
-        elevation: 3, // for android - to see the shadow
         justifyContent: "center",
         alignItems: "center",
     },
@@ -320,7 +282,6 @@ export default StyleSheet.create({
         margin: 15,
         height: 180,
         marginBottom: -40,
-
     },
     categoriesContainer: {
         flex: 1,
@@ -329,10 +290,25 @@ export default StyleSheet.create({
         shadowOpacity: 0.6,
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 10,
-        elevation: 3, // for android - to see the shadow
         justifyContent: "flex-end",
         alignItems: "flex-end",
         marginTop: 5,
     },
-
+    containerStyle: {
+        flex: 1,
+        justifyContent: 'space-between',
+        width: '100%',
+        height: '100%',
+       },
+       scrollViewStyle: {
+         flex: 0,
+         padding: "5%",
+         justifyContent: 'center',
+       
+       },
+       headingStyle: {
+         fontSize: 30,
+         textAlign: 'center',
+         marginBottom: 40,
+       },
 });

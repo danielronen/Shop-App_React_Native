@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ImageBackground, Alert, Modal, } from "react-native";
+import { View, Text, TouchableOpacity, ImageBackground, Modal } from "react-native";
 import styles from '../assets/styles'
 import { CART } from "../data/dummy-data"
-// 1. Add ImageBackground
-// 2. add style.
 
 const ItemsGrid = (props, { navigation }) => {
 
@@ -14,7 +12,7 @@ const ItemsGrid = (props, { navigation }) => {
     SetshowWarning(true);
     setTimeout(() => {
       SetshowWarning(false);
-    }, 1200);
+    }, 700);
   };
 
   return (

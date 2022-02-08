@@ -4,8 +4,8 @@ class Product {
   constructor(
     categoryIds,
     title,
-    price, // affordable, priecy, luxurious
-    shipping, // simple, challenging, trek
+    price, 
+    shipping, 
     imageUrl,
     description,
     sizes,

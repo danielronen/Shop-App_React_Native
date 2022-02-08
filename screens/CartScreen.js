@@ -12,13 +12,9 @@ export default function CartScreen({ route, navigation }) {
   }, 0);
   let price = res.toFixed(2);
 
-
-
-  //const [discount, setDiscount] = useState(0);
   const [myCoupon, setMyCoupon] = useState("");
   const [VaildCoupon, setVaildCoupon] = useState()
   const [finalPrice, setFinalPrice] = useState(price);
-
 
 
   const checkCoupon = () => {
@@ -35,8 +31,6 @@ export default function CartScreen({ route, navigation }) {
   }
 
 
-
-  // 2. Call ItemsGrid
   const renderItem = ({ item }) => {
     return (
       <View style={styles.gridItem}>
@@ -45,16 +39,16 @@ export default function CartScreen({ route, navigation }) {
           Alert.alert("Attantion", `Do you wanna delete this item ?`,
             [
               {
-                
                 text: 'Yes',
-                onPress: () => { myCart = myCart.filter(product => {product.title != item.title})
-                console.log(`my cart: ${myCart}`) 
-                } },
-                               { text: 'No' }])
-
-        }} onPress={() => navigation.navigate("Product", { productId: item.id})}>
-          <ImageBackground source={{ uri: item.imageUrl }} style={styles.BGImg}>
-          </ImageBackground>
+                onPress: () => {
+                  myCart = myCart.filter(product => { product.title != item.title })
+                  console.log(`my cart: ${myCart}`)
+                }
+              },
+              { text: 'No' }
+            ])
+        }} onPress={() => navigation.navigate("Product", { productId: item.id })}>
+          <ImageBackground source={{ uri: item.imageUrl }} style={styles.BGImg}></ImageBackground>
         </TouchableOpacity>
         <Text style={[styles.titles, { fontSize: 15 }]}>{item.title}</Text>
         <Text style={[styles.titles, { fontSize: 17 }]}>{item.price}$</Text>

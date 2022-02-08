@@ -1,9 +1,11 @@
 import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from "react-native";
+import { useForm} from 'react-hook-form';
+import { Text, View, ScrollView } from "react-native";
 import styles from '../assets/styles';
 import { FormBuilder } from 'react-native-paper-form-builder';
-import { Button, TextInput } from 'react-native-paper';
+import { Button } from 'react-native-paper';
+
+
 
 export default function PaymentScreen({ navigation, route }) {
   const { control, setFocus, handleSubmit } = useForm({
@@ -17,9 +19,9 @@ export default function PaymentScreen({ navigation, route }) {
   });
 
   return (
-    <View style={stylesE.containerStyle}>
+    <View style={styles.containerStyle}>
       <View style={styles.backGround}>
-        <ScrollView contentContainerStyle={[stylesE.scrollViewStyle, { flexGrow: 1 }]}>
+        <ScrollView style={{margin: 10, marginTop: "5%"}} contentContainerStyle={[styles.scrollViewStyle, { flexGrow: 1 }]}>
           <Text style={styles.titles}>Customer information</Text>
           <FormBuilder
             control={control}
@@ -291,201 +293,3 @@ export default function PaymentScreen({ navigation, route }) {
     </View>
   );
 }
-
-const stylesE = StyleSheet.create({
-  containerStyle: {
-    flex: 1,
-   
-  },
-  scrollViewStyle: {
-    flex: 0,
-    padding: 15,
-    justifyContent: 'center',
-  },
-  headingStyle: {
-    fontSize: 30,
-    textAlign: 'center',
-    marginBottom: 40,
-  },
-});
-
-
-
-
-
-
-
-
-
-// export default function App({ navigation, route }) {
-//   const {
-//     control,
-//     handleSubmit,
-//     formState: { errors, isValid } } = useForm({ mode: 'onBlur' });
-//   const onSubmit = data => navigation.navigate('Success');
-//   console.log(errors);
-
-
-//   return (
-//     <View style={styles.backGround}>
-//       <View style={[styles.container, { alignItems: 'center' }]}>
-//         <Text style={styles.titles}>Customer information</Text>
-//         <ScrollView style={{ margin: 30 }} onSubmit={handleSubmit(onSubmit)} >
-//           <Controller
-//             control={control}
-//             name="name"
-//             render={({ field: { onChange, value, onBlur } }) => (
-//               <TextInput
-//                 style={[styles.input, { alignItems: 'center' }]}
-//                 iconName="person"
-//                 iconType="MaterialIcons"
-//                 placeholder="Enter your name here"
-//                 value={value}
-//                 onBlur={onBlur}
-//                 onChangeText={value => onChange(value)}
-//               />
-//             )}
-//             rules={{
-//               required: {
-//                 value: true,
-//                 message: 'Field is required!'
-//               }
-//             }}
-//           />
-//           <Controller
-//             control={control}
-//             name="lastName"
-//             render={({ field: { onChange, value, onBlur } }) => (
-//               <TextInput
-//                 style={styles.input}
-//                 iconName="person"
-//                 iconType="MaterialIcons"
-//                 placeholder="Enter your last name here"
-//                 value={value}
-//                 onBlur={onBlur}
-//                 onChangeText={value => onChange(value)}
-//               />
-//             )}
-//             rules={{
-//               required: {
-//                 value: true,
-//                 message: 'Field is required!'
-//               }
-//             }}
-//           />
-//           <Controller
-//             control={control}
-//             name="email"
-//             render={({ field: { onChange, value, onBlur } }) => (
-//               <TextInput
-//                 style={styles.input}
-//                 iconName="person"
-//                 iconType="MaterialIcons"
-//                 placeholder="Email"
-//                 value={value}
-//                 onBlur={onBlur}
-//                 onChangeText={value => onChange(value)}
-//               />
-//             )}
-//             rules={{
-//               type:{
-//                 value: 'email'
-//               },
-//               required: {
-//                 value: true,
-//                 message: 'Field is required!',
-//                 type: 'email'
-//               },
-//               pattern:{
-//                  value: '^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$',
-//                  message: `It's not a valid email`
-//               },
-//               }}
-//          />
-//           <Button title='Submit' onPress={handleSubmit(onSubmit)} />
-//         </ScrollView>
-//       </View>
-//     </View>
-//   );
-// }
-
-{/* <View style={[styles.container, { alignItems: 'center' }]}>
-          <Text style={styles.titles}>Customer information</Text>
-          <TextInput style={styles.input}
-            type="text"
-            placeholder="First name"
-            textContentType='givenName'
-            minLength={1}
-            required
-          />
-          <TextInput style={styles.input}
-            type="text"
-            placeholder="Last name"
-            textContentType='familyName'
-            minLength={1}
-            required
-          />
-          <TextInput style={styles.input}
-            type="email"
-            placeholder="Email"
-            textContentType='emailAddress'
-            required
-          />
-          <TextInput style={styles.input}
-            type="numeric"
-            placeholder="Phone Number"
-            textContentType='telephoneNumber'
-            required
-          />
-          <TextInput style={styles.input}
-            type="text"
-            placeholder="Country"
-            textContentType='countryName'
-            required
-          />
-          <TextInput style={styles.input}
-            type="text"
-            placeholder="City"
-            textContentType='addressCity'
-            required
-          />
-          <TextInput style={styles.input}
-            type="text"
-            placeholder="Address"
-            textContentType='fullStreetAddress'
-            required
-          />
-          <Text style={styles.titles}>Payment information</Text>
-
-          <TextInput style={styles.input}
-            type="text"
-            placeholder="Card Holder Name"
-            textContentType='username'
-            minLength={1}
-            required
-          />
-          <TextInput style={styles.input}
-            type="numeric"
-            placeholder="ID Number"
-            textContentType='none'
-            required
-          />
-          <TextInput style={styles.input}
-            type="numeric"
-            placeholder="Credit Card Number"
-            textContentType='creditCardNumber'
-            required
-          />
-          <TextInput style={styles.input}
-            type="numeric"
-            placeholder="Exp date"
-            textContentType=''
-            required
-          />
-
-
-          <TextInput type="submit" />
-          <TouchableOpacity style={styles.checkButton} onPress={() => navigation.navigate("Success")}>
-            <Text style={styles.checkButtonText}>Pay</Text>
-          </TouchableOpacity>
-         */}
