@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, TouchableOpacity, ScrollView, Image, Button, Alert, useWindowDimensions } from 'react-native';
 import styles from '../assets/styles'
 import { PRODUCTS, CART } from "../data/dummy-data"
+import { Entypo as Icon } from "react-native-vector-icons";
 
 export default function ProductScreen({ navigation, route }) {
   // store productId from CountryTripScreen:
@@ -9,6 +10,10 @@ export default function ProductScreen({ navigation, route }) {
   // find all data for productId:
   const selectedProduct = PRODUCTS.find((product) => product.id === productId);
   const sizesArr = selectedProduct.sizes;
+  let rates = [];
+  for(let i = 0; i < selectedProduct.rating; i++) {
+    rates.push( <Icon name="star" style={{color: 'gold', fontSize: 17}}></Icon>);
+  };
 
 
   return (
@@ -28,6 +33,9 @@ export default function ProductScreen({ navigation, route }) {
           <View style={styles.listSizes}>
             <Text style={styles.txt}>{sizesArr}</Text>
           </View>
+          
+            <Text style={styles.title}>Rating :  {rates}</Text>
+          
           <View style={{ alignItems: 'center' }}>
             <TouchableOpacity
               onPress={() => {

@@ -28,6 +28,7 @@
     "web": {
       "favicon": "./assets/logo.png"
     },
-    "description": ""
+    "description": "React_Native Final_Project Shop-App\n\nDaniel Ronen\nShawn Bryan",
+    "githubUrl": "https://github.com/danielronen/Shop-App_React_Native"
   }
 }

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Text, View, FlatList, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { Text, View, FlatList, TextInput, Alert, TouchableOpacity, ImageBackground } from 'react-native';
 import { CART, COUPONS } from "../data/dummy-data";
 import styles from '../assets/styles';
 
 
 export default function CartScreen({ route, navigation }) {
 
-  const myCart = CART;
+  let myCart = CART;
   let res = CART.reduce(function (prev, current) {
     return prev + +current.priceInc
   }, 0);
@@ -40,8 +40,22 @@ export default function CartScreen({ route, navigation }) {
   const renderItem = ({ item }) => {
     return (
       <View style={styles.gridItem}>
-        <ImageBackground source={{ uri: item.imageUrl }} style={styles.BGImg}>
-        </ImageBackground>
+        <TouchableOpacity onLongPress={() => {
+          console.log(`my cart: ${myCart}`)
+          Alert.alert("Attantion", `Do you wanna delete this item ?`,
+            [
+              {
+                
+                text: 'Yes',
+                onPress: () => { myCart = myCart.filter(product => {product.title != item.title})
+                console.log(`my cart: ${myCart}`) 
+                } },
+                               { text: 'No' }])
+
+        }} onPress={() => navigation.navigate("Product", { productId: item.id})}>
+          <ImageBackground source={{ uri: item.imageUrl }} style={styles.BGImg}>
+          </ImageBackground>
+        </TouchableOpacity>
         <Text style={[styles.titles, { fontSize: 15 }]}>{item.title}</Text>
         <Text style={[styles.titles, { fontSize: 17 }]}>{item.price}$</Text>
       </View>
@@ -57,12 +71,13 @@ export default function CartScreen({ route, navigation }) {
           data={myCart}
           renderItem={renderItem}
           numColumns={2}
+          onSelectProduct
         />
       </View>
       <View style={[styles.container]}>
         <Text style={styles.titles}>Final price: {price}$</Text>
 
-        <View style={[styles.inputView, {alignItems: 'center'}]}>
+        <View style={[styles.inputView, { alignItems: 'center' }]}>
           <Text style={styles.textInput}>Coupon: </Text>
           <TextInput
             autoCapitalize='none'
