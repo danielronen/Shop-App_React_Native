@@ -33,6 +33,12 @@ Every product appears with an image, title, price and button for add product to 
 
 ![3](AppScreens/3.jpeg)
 
+### More categories (Hoodies, Coats and Accessories)
+
+![111](AppScreens/111.jpeg)
+![222](AppScreens/222.jpeg)
+![333](AppScreens/333.jpeg)
+
 ### Category-Screen(shoes)
 
 When the user press the button 'Add to cart' appears an alert that product was added.
