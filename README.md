@@ -1,6 +1,7 @@
 # React-Native-Shop-App
 
 React native final project
+All rights reserved - Daniel Ronen & Shawn Bryan.
 
 ## Shop-App is a store application for our final project in React Native course
 
