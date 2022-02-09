@@ -1,6 +1,6 @@
 # React-Native-Shop-App
 
-React native final project
+### React native final project
 
 All rights reserved - Daniel Ronen & Shawn Bryan.
 
